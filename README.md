@@ -1,1 +1,2 @@
 # basstools
+Password: admin
