@@ -195,9 +195,9 @@ while wh2 > 1:
                 input("Press the Enter key to continue...")
                 os.system("clear")
             if toolNum == "99":
-                break
+                os._exit(1)
         input("Press the Enter key to close the tool...")
         os.system("clear")
     else :
         print ("\033[1;31mERROR: BAD PASSWORD")
-    break
+    os._exit(1)
