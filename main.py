@@ -159,7 +159,7 @@ while wh2 > 1:
                           exx=input("\033[1;31m# Continue ?\033[1;92m y/n \033[1;35m: \033[1;35m")
                           if exx=='n' or exx=='N' or exx=='no':
                               input("Press the Enter key to continue...")
-                                os.system("clear")
+                              os.system("clear")
                     userIdf=linko.objectId
                     nemmm=0
                     cpt=0
