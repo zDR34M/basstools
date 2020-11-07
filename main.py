@@ -1,6 +1,6 @@
 # -*-coding: utf-8 -*
 # Regular Colors                                     #Black="\[\033[0;30m\                                                         >
-#Red="\[\033[0;31m\]" # Red
+#Red="\[\033[1;31m\]" # Red
 #Green="\[\033[0;32m\]" # Green
 #Yellow="\[\033[0;33m\]" # Yellow
 #Blue="\[\033[0;34m\]" # Blue
@@ -63,33 +63,35 @@ while wh2 > 1:
                 tst=False
                 while tst==False:
                     try:
-                        email=input("\033[1;93m# your email : \033[0m")
-                        password=getpass.getpass("\033[1;93m# your password : \033[0m")
+                        email=input("\033[1;31m# email : \033[1;35m")
+                        password=getpass.getpass("\033[1;31m# password : \033[1;35m")
                         client.login(email=email,password=password)
                         tst=True
                     except:
                         tst=False
-                        print("\033[1;93m# verify email or password\033[0m")
-                        exx=input("\033[1;93m# to be continue ?\033[1;92m y/n \033[0m: \033[0m")
+                        print("\033[1;31m# Wrong Email or Password !\033[1;35m")
+                        exx=input("\033[1;31m# Continue ?\033[1;92m y/n \033[1;35m: \033[1;35m")
                         if exx=='n' or exx=='N' or exx=='no':
-                            os._exit(1)
+                            input("Press the Enter key to continue...")
+                            os.system("clear")
                             
                 tst=False
                 while tst==False:
                     try:
-                        infoos=input("\033[1;93m#give me url of group : \033[0m")
+                        infoos=input("\033[1;31m#Write Group URL : \033[1;35m")
                         infoo=client.get_from_code(infoos)
                         tst=True
                         if infoo.objectType!=12:
-                            print ("\033[1;93m#not chat url !\033[0m")
+                            print ("\033[1;31m#Wrong chat url !\033[1;35m")
                             tst=False
                     except:
                         tst=False
-                        print("\033[1;93m# verify your url \033[0m")
+                        print("\033[1;31m# verify your url \033[1;35m")
                     if tst==False:
-                        exx=input("\033[1;93m# to be continue ?\033[1;92m y/n \033[0m: \033[0m")
+                        exx=input("\033[1;31m# Continue ?\033[1;92m y/n \033[1;35m: \033[1;35m")
                         if exx=='n' or exx=='N' or exx=='no':
-                            os._exit(1)
+                            input("Press the Enter key to continue...")
+                            os.system("clear")
                             
                 chatId=infoo.objectId
                 comId=infoo.path[1:infoo.path.index("/")]
@@ -100,25 +102,26 @@ while wh2 > 1:
                     try:
                         tst=True
                         
-                        swich=int(input("\033[1;93mchoose : \n\033[1;92m1 \033[1;93m- online members \n\033[1;92m2\033[1;93m - followers of user \n\033[1;92m3 \033[1;93m- new members \n\033[1;92mwhich one \033[1;93m: \033[0m"))
+                        swich=int(input("\033[1;31mchoose : \n\033[1;92m1 \033[1;31m- online members \n\033[1;92m2\033[1;31m - followers of user \n\033[1;92m3 \033[1;31m- new members \n\033[1;92mSelect one \033[1;31m: \033[1;35m"))
                         if swich<0 or swich>3:
-                            print("\033[1;93mplease ... choose 1 or 2 or 3 \033[0m")
+                            print("\033[1;31mSelect number\033[1;35m")
                             tst=False
                     except :
-                        print("\n\033[1;93mchoose a number\033[0m ")
+                        print("\n\033[1;31mChoose a number\033[1;35m ")
                         tst=False
                 tst=False
                 while tst==False:
                     try:
                         tst=True
-                        maxo=int(input("\n\033[1;93m# what maximum member ? : \033[0m"))   
+                        maxo=int(input("\n\033[1;31m# Write a maximum member ? : \033[1;35m"))   
                     except:
                         tst=False
-                        print("\033[1;93mno  .... \n type a number exmple :\033[1;92m 400 \033[0m")
+                        print("\033[1;31mThis is not a number ! \033[1;35m")
                     if tst==False:
-                        tobb=input("to be continue ? y/n : ")
+                        tobb=input("Continue ? y/n : ")
                         if tobb=="n" or tobb=="N":
-                            os._exit(1)
+                            input("Press the Enter key to continue...")
+                            os.system("clear")
                 cpt=0
                 if swich==1:
                     nemmm=0
@@ -130,7 +133,7 @@ while wh2 > 1:
                             try:
                                 sub_client.invite_to_chat(userId=userId,chatId=chatId)
                                 cpt=cpt+1
-                                print(cpt , "\033[1;93m ) \033[1;92m- \033[1;93muser id\033[1;92m =\033[0m ",userId)
+                                print(cpt , "\033[1;31m ) \033[1;92m- \033[1;31muser id\033[1;92m =\033[1;35m ",userId)
                             except:
                                 ffffff=True
                         nemmm=nemmm+25
@@ -138,24 +141,25 @@ while wh2 > 1:
                     tst=False
                     while tst==False:
                       try:
-                         link=input("\033[1;93m# give me link of profile \033[1;92m: \033[0m")
+                         link=input("\033[1;31m# Write Profile URL \033[1;92m: \033[1;35m")
                          linko=client.get_from_code(link)
                          tst=True
                          if linko.objectType!=0:
-                             print (" \033[1;93mnot profile url !\033[0m")
+                             print (" \033[1;31mNot a profile url !\033[1;35m")
                              tst=False
                          fchg=linko.path[1:infoo.path.index("/")]
                          if fchg!=comId:
                              tst=False
-                             print ("\033[1;93mis not profile of this community !\033[0m")
+                             print ("\033[1;31mThis profile is not in this community !\033[1;35m")
                       except:
                           tst=False
-                          print("\033[1;93m# verify your url \033[0m")
+                          print("\033[1;31m# Wrong url !\033[1;35m")
                           
                       if tst==False:
-                          exx=input("\033[1;93m# to be continue ?\033[1;92m y/n \033[0m: \033[0m")
+                          exx=input("\033[1;31m# Continue ?\033[1;92m y/n \033[1;35m: \033[1;35m")
                           if exx=='n' or exx=='N' or exx=='no':
-                              os._exit(1)
+                              input("Press the Enter key to continue...")
+                                os.system("clear")
                     userIdf=linko.objectId
                     nemmm=0
                     cpt=0
@@ -166,7 +170,7 @@ while wh2 > 1:
                             try:
                                 sub_client.invite_to_chat(userId=userId, chatId=chatId)
                                 cpt=cpt+1
-                                print(cpt , "\033[1;93m ) \033[1;92m- \033[1;93muser id \033[1;92m= \033[0m",userId)
+                                print(cpt , "\033[1;31m ) \033[1;92m- \033[1;31muser id \033[1;92m= \033[1;35m",userId)
                             except:
                                 ffffff=True
                         nemmm=nemmm+25
@@ -180,19 +184,20 @@ while wh2 > 1:
                             try:
                                 sub_client.invite_to_chat(userId=userId,chatId=chatId)
                                 cpt=cpt+1
-                                print(cpt , "\033[1;93m ) \033[1;92m-\033[1;93m user id \033[1;92m= \033[0m",userId)
+                                print(cpt , "\033[1;31m ) \033[1;92m-\033[1;31m user id \033[1;92m= \033[1;35m",userId)
                             except:
                                 ffffff=True
                                 
                         nemmm=nemmm+25
                     
-                print("\033[1;92mall done !\033[0m")
+                print("\033[1;92mdone !\033[1;35m")
                     
-                os._exit(1)
+                input("Press the Enter key to continue...")
+                os.system("clear")
             if toolNum == "99":
                 break
         input("Press the Enter key to close the tool...")
         os.system("clear")
     else :
-        print ("\033[0;31mERROR: BAD PASSWORD")
+        print ("\033[1;31mERROR: BAD PASSWORD")
     break
