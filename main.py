@@ -23,18 +23,18 @@
 
 import sys, os, amino, getpass
 os.system ("clear")
-print ("\033[1;33m            BassKiller Tools.\n\n")
-print ("\033[1;33m            P A S S W O R D :   \n")
+print ("\033[1;31m            BassKiller Tools.\n\n")
+print ("\033[1;31m            P A S S W O R D :   admin\n")
 wh1 = 2
 wh2 = 3
 while wh2 > 1:
-    pas = input ("        \033[0;35m    Enter Password :\033[1;30m    ")
+    pas = input ("        \033[1;35m    Enter Password :\033[1;30m    ")
     os.system ("clear")
     if pas == "admin" :
         while wh1 > 1:
             print ("\033[1;31mTools Menu:\n")
             print ("1. Amino Name Virus.\n")
-            print ("2. Soon...\n")
+            print ("2. Amino Invite to group.\n")
             print ("99. Exit.\n")
             toolNum = input ("Please choose a tool: ")
             if toolNum == "1":
@@ -78,11 +78,11 @@ while wh2 > 1:
                 tst=False
                 while tst==False:
                     try:
-                        infoos=input("\033[1;31m#Write Group URL : \033[1;35m")
+                        infoos=input("\033[1;31m# Write Group URL : \033[1;35m")
                         infoo=client.get_from_code(infoos)
                         tst=True
                         if infoo.objectType!=12:
-                            print ("\033[1;31m#Wrong chat url !\033[1;35m")
+                            print ("\033[1;31m# Wrong group url !\033[1;35m")
                             tst=False
                     except:
                         tst=False
