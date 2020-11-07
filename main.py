@@ -24,7 +24,7 @@
 import sys, os
 os.system ("clear")
 print ("\033[1;33m            BassKiller Tools.\n\n")
-print ("\033[1;33m            P A S S W O R D :    admin\n")
+print ("\033[1;33m            P A S S W O R D :   \n")
 wh1 = 2
 wh2 = 3
 while wh2 > 1:
@@ -32,7 +32,7 @@ while wh2 > 1:
     os.system ("clear")
     if pas == "admin" :
         while wh1 > 1:
-            print ("\033[1;33mTools Menu:\n")
+            print ("\033[1;31mTools Menu:\n")
             print ("1. Amino Name Virus.\n")
             print ("2. Soon...\n")
             print ("99. Exit.\n")
