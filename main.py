@@ -35,6 +35,8 @@ while wh2 > 1:
             print ("\033[1;31mTools Menu:\n")
             print ("1. Amino Name Virus.\n")
             print ("2. Amino Invite to group.\n")
+            print ("3. Amino Get community ID.\n")
+            print ("3. Amino Get ID from link.\n")
             print ("99. Exit.\n")
             toolNum = input ("Please choose a tool: ")
             if toolNum == "1":
@@ -194,6 +196,23 @@ while wh2 > 1:
                     
                 input("Press the Enter key to continue...")
                 os.system("clear")
+            elif toolNum == "3":
+                client = amino.Client()
+                3email = input ("Enter your email : ")
+                3password = input ("Enter your password : ")
+                client.login(email=3email, password=3password)
+                communities = client.sub_clients()
+                for name, id in zip(communities.name, communities.comId): print(name, id)
+                input("Press the Enter key to close the tool...")
+            elif toolNum == "4":
+                client = amino.Client()
+                4email = input("Enter your email : ")
+                4password = input("Enter your password : ")
+                client.login(email=4email, password=4password)
+                4id = input("Enter link : ")
+                id = client.get_from_code(4id).objectId
+                print(4id)
+                input("Press the Enter key to close the tool...")
             if toolNum == "99":
                 os._exit(1)
         input("Press the Enter key to close the tool...")
