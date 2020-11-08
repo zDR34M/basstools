@@ -1,4 +1,5 @@
 # -*-coding: utf-8 -*
+# Code By: BassKiller
 # Regular Colors                                     #Black="\[\033[0;30m\                                                         >
 #Red="\[\033[1;31m\]" # Red
 #Green="\[\033[0;32m\]" # Green
