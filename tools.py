@@ -210,9 +210,9 @@ while wh2 > 1:
                 email4 = input("Enter your email : ")
                 password4 = input("Enter your password : ")
                 client.login(email4=email, password4=password)
-                4id = input("Enter link : ")
-                id = client.get_from_code(4id).objectId
-                print(4id)
+                id4 = input("Enter link : ")
+                id = client.get_from_code(id4).objectId
+                print(id4)
                 input("Press the Enter key to close the tool...")
             if toolNum == "99":
                 os._exit(1)
