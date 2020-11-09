@@ -199,17 +199,17 @@ while wh2 > 1:
                 os.system("clear")
             elif toolNum == "3":
                 client = amino.Client()
-                3email = input ("Enter your email : ")
-                3password = input ("Enter your password : ")
-                client.login(email=3email, password=3password)
+                email3 = input ("Enter your email : ")
+                password3 = input ("Enter your password : ")
+                client.login(email3=email, password3=password)
                 communities = client.sub_clients()
                 for name, id in zip(communities.name, communities.comId): print(name, id)
                 input("Press the Enter key to close the tool...")
             elif toolNum == "4":
                 client = amino.Client()
-                4email = input("Enter your email : ")
-                4password = input("Enter your password : ")
-                client.login(email=4email, password=4password)
+                email4 = input("Enter your email : ")
+                password4 = input("Enter your password : ")
+                client.login(email4=email, password4=password)
                 4id = input("Enter link : ")
                 id = client.get_from_code(4id).objectId
                 print(4id)
